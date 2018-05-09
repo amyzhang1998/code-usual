@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrap {
+        position: relative;
+        /* border: 1px solid; */
+    }
+
+    .left {
+        width: 100px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        /* background: pink */
+    }
+
+    .box {
+        overflow: hidden;
+    }
+
+    .orange {
+        float: left;
+        background-color: orange;
+    }
+
+    .green {
+        float: left;
+        background-color: green;
+    }
+
+    .orange,
+    .green {
+        margin-bottom: -500px;
+        padding-bottom: 500px;
+        width: 200px;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <h3>使用 position:absolute,实现左栏高度随右栏高度自适应</h3>
+    <div class='wrap'>
+        <div class='left'>ddddd</div>
+        <div class='right'>
+            <br> ddd
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> -->
+        </div>
+        <h3> 使用 padding 和 margin 实现 多栏 等高布局</h3>
+        <div class="box">
+            <div class="orange">
+                orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br> orange
+                <br>
+            </div>
+            <div class="green">
+                green
+                <br> green
+                <br> green
+                <br> green
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

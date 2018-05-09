@@ -6,10 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .parent {
+            width: 50px;
+            background: red;
+        }
+
+        .child {
+            height: 0;
+            /* padding-top: 56.25%; */
+            padding-top: 100%;
+            overflow: hidden;
+
+        }
+
+        .fake {
+            background: pink;
+            width: 100px;
+        }
+
+        .fake:before {
+            content: '';
+            width: 1px;
+            margin-left: -1px;
+            float: left;
+            height: 0;
+            padding: calc(591/1293*100%)
+        }
+
+        .fake:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .fake-child {
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
 <body>
-    ddddd
+    <h3>容器长宽比</h3>
+    <!-- 16:9= 56.25% -->
+    <p>
+        方案一：基于父容器的宽高比。使用 padding-top或者是 padding-bottom的百分比值，因为基于父容器的宽度计算的;
+    </p>
+    <div class='parent'>
+        <div class='child'></div>
+    </div>
+    <h3> 任何可能的比例，使用 calc()padding-top: calc(591.44 / 1127.34 * 100%)</h3>
+    <h3> 在设置padding时，不将内容推高或推底 使用 position：absolute</h3>
+    <h3> 借助伪元素实现宽高比</h3>
+    <div class='fake'>
+        <div class='fake-child'>jdjdjfjfjjfjfjj</div>
+    </div>
+    <h3> 使用 css 自定义属性</h3>
+
+
+
+
 </body>
 
 </html>
