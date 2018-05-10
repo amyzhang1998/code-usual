@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let body = document.getElementsByTagName('body')[0];
+
+        for (let i = 0; i < 10000; i++) {
+            let divEle = document.createElement('div');
+            divEle.textContent = 'item' + i + 1;
+            body.appendChild(divEle);
+        }
+
+        console.time('getElementsByTagName: ')
+        let elements = document.getElementsByTagName('div');
+        console.timeEnd('getElementsByTagName: ');
+
+        console.time('querySelectorAll: ')
+        let query = document.querySelectorAll('div')
+        console.timeEnd('querySelectorAll: ')
+
+        // 精准的时间展示 是通过  window.performance
+        let timeStart0 = window.performance.now();
+        let ele = document.getElementsByTagName('div');
+        let timeEnd0 = window.performance.now();
+
+
+        let timeStart1 = window.performance.now();
+        let quy = document.querySelectorAll('div')
+        let timeEnd1 = window.performance.now();
+
+        console.log('get', `${timeEnd0}`, timeEnd0 - timeStart0)
+        console.log('query', timeEnd1 - timeStart1)
+    </script>
+</body>
+
+</html>

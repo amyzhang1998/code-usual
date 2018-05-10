@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="root">
+        <div class="container">
+            <section class="sidebar">
+                <ul class="menu">
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script>
+        const DFS = function (node) {
+            if (!node) return;
+            let deep = arguments[1] || 1;
+            console.log(`${node.nodeName}.${node.classList}   ${deep}`)
+
+            if (!node.children.length) return;
+
+            Array.from(node.children).forEach(item => DFS(item, deep + 1))
+        }
+        let nodes = document.body.querySelector('.root')
+        console.log(nodes)
+        DFS(nodes)
+    </script>
+</body>
+
+</html>
