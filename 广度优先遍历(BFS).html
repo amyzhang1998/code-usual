@@ -24,6 +24,7 @@
         </div>
     </div>
     <script>
+        // 队列，入队列，出队列
         const BFS = function (root) {
             if (!root) return;
 
@@ -31,7 +32,6 @@
                 item: root,
                 depth: 1
             }]
-
             while (queue.length) {
                 let node = queue.shift();
 
@@ -44,8 +44,6 @@
                         depth: node.depth + 1
                     })
                 })
-
-
             }
         }
         let nodes = document.body.querySelector('.root')
