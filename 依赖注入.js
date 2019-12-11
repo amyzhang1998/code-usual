@@ -69,3 +69,5 @@ var myFunc = di.inject(function(dep3, dep1, dep2) {
 })
 
 console.log(myFunc())
+
+//ljtest
